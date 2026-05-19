@@ -108,16 +108,6 @@
     </div>
     </footer>
 
-    <!-- Struktur Popup -->
-<div id="firstTimePopup" class="popup-overlay">
-    <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h2>Selamat Datang! 👋</h2>
-        <p>Terima kasih telah mengunjungi website kami. Dapatkan info terbaru dan promo menarik khusus untuk Anda.</p>
-        <button class="popup-action-btn" onclick="closePopup()">Mulai Jelajah</button>
-    </div>
-</div>
-
 <script>
     const audio = document.getElementById("myAudio");
     const playIcon = document.getElementById("playIcon");
@@ -139,35 +129,6 @@
             playIcon.classList.add("fa-circle-play");
         }
     }
-
-    // Update Progress Bar
-    audio.ontimeupdate = function() {
-        const percentage = (audio.currentTime / audio.duration) * 100;
-        progress.style.width = percentage + "%";
-        
-        // Update angka waktu (sederhana)
-        let mins = Math.floor(audio.currentTime / 60);
-        let secs = Math.floor(audio.currentTime % 60);
-        document.getElementById("currentTime").innerHTML = mins + ":" + (secs < 10 ? '0' : '') + secs;
-    };
-
-    document.addEventListener("DOMContentLoaded", function() {
-    // Memeriksa apakah user sudah pernah berkunjung sebelumnya
-    if (!localStorage.getItem("hasVisited")) {
-        // Jika belum, tampilkan popup setelah jeda 1 detik (1000ms)
-        setTimeout(function() {
-            document.getElementById("firstTimePopup").style.display = "flex";
-        }, 1000);
-        
-        // Simpan status di localStorage agar tidak muncul lagi nanti
-        localStorage.setItem("hasVisited", "true");
-    }
-});
-
-// Fungsi untuk menutup popup
-function closePopup() {
-    document.getElementById("firstTimePopup").style.display = "none";
-}
 
 </script>
 
