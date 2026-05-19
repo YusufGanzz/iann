@@ -272,3 +272,67 @@ img {
     border-radius: 50%;
     box-shadow: 0 4px 60px rgba(0,0,0,0.5);
 }
+
+/* Overlay Latar Belakang */
+.popup-overlay {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Efek gelap transparan */
+    z-index: 9999; /* Memastikan popup berada di paling atas */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kotak Konten Popup */
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Tombol Close (X) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Tombol Aksi */
+.popup-action-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.popup-action-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Animasi Muncul */
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
